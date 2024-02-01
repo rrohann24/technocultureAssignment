@@ -1,0 +1,27 @@
+version: "3"
+services:
+  book-service:
+    build:
+      context: ./BookService
+    ports:
+      - "5000:80"
+
+  order-service:
+    build:
+      context: ./OrderService
+    ports:
+      - "5001:80"
+    depends_on:
+      - book-service
+
+  notification-service:
+    build:
+      context: ./NotificationService
+    ports:
+      - "5002:80"
+
+  user-service:
+    build:
+      context: ./UserService
+    ports:
+      - "5003:80"

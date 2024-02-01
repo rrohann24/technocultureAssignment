@@ -1,0 +1,11 @@
+apiVersion: dapr.io/v1alpha1
+kind: Configuration
+metadata:
+  name: dapr-config
+spec:
+  app-id: order-service
+  http:
+    port: 3002
+  pubsub:
+    - name: pubsub
+      pubsubType: "redis"  

@@ -1,0 +1,11 @@
+apiVersion: dapr.io/v1alpha1
+kind: Configuration
+metadata:
+  name: dapr-config
+spec:
+  app-id: notification-service
+  http:
+    port: 3003
+  pubsub:
+    - name: pubsub
+      pubsubType: "redis"  
